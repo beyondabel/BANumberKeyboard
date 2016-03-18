@@ -75,7 +75,6 @@
 }
 
 - (void)deleteButtonOnclick:(UIButton *) button {
-//    [self.delegate numberKeyboard:self title:@""];
     [self.delegate textFieldShouldDelete:self];
 }
 
