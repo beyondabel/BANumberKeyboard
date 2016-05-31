@@ -13,6 +13,9 @@
 @property (nonatomic, strong) UIButton * button;
 @property (nonatomic, strong) UIView * lineView;
 
++ (UIImage *)imageColor:(UIColor *)color;
+
 - (void)setButtonTitle:(NSString *)title;
+
 
 @end

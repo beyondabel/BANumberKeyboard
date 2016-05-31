@@ -10,7 +10,9 @@
 #import "BATextField.h"
 
 @interface ViewController () {
-    BATextField * textField;
+    BATextField *numberTextField;
+    BATextField *moneyTextField;
+    BATextField *idTextField;
 }
 @end
 
@@ -20,10 +22,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    textField = [[BATextField alloc] initWithFrame:(CGRect){15,30,290,40}];
-    [self.view addSubview:textField];
+    numberTextField = [[BATextField alloc] initWithFrame:(CGRect){15,30,290,40}];
+    numberTextField.placeholder = @"纯数字键盘";
+    [numberTextField setKeyboardType:BAKeyboardTypeNumber];
+    [self.view addSubview:numberTextField];
     
-    textField.backgroundColor = [UIColor greenColor];
+    moneyTextField = [[BATextField alloc] initWithFrame:(CGRect){15,80,290,40}];
+    moneyTextField.placeholder = @"金额数字键盘";
+    moneyTextField.numberKeyboardType = BANumberKeyboardTypeDouble;
+    [self.view addSubview:moneyTextField];
+    
+    
+    idTextField = [[BATextField alloc] initWithFrame:(CGRect){15,130,290,40}];
+    idTextField.placeholder = @"身份证键盘";
+    idTextField.numberKeyboardType = BANumberKeyboardTypeIDCard;
+    [self.view addSubview:idTextField];
 }
 
 - (void)didReceiveMemoryWarning {
